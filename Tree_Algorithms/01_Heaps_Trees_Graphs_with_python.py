@@ -33,7 +33,9 @@ def build_max_heap(array_):
     for i in range(len(array_) // 2, 0, -1):
         max_heapify(array_, i)
 
-# list_ = [4, 1, 3, 2, 16, 9, 10, 14, 8, 7]
-# print(list_)
-# build_max_heap(list_)
-# print(list_)
+if __name__ == '__main__':
+
+    list_ = [4, 1, 3, 2, 16, 9, 10, 14, 8, 7]
+    print(list_)
+    build_max_heap(list_)
+    print(list_)
