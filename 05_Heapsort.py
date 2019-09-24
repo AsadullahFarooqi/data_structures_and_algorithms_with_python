@@ -18,20 +18,20 @@ def max_heapify(heap_, i):
     right = right_child(i)
     largest = 0
     # print("Left  : ", left, "\nRight : ", right, "\n\n")
-    if left <= len(heap_) and heap_[left-1] > heap_[i-1]:
+    if left <= len(heap_) and heap_[left] > heap_[i]:
         largest = left
     else:
         largest = i
-    if right <= len(heap_) and heap_[right-1] > heap_[largest-1]:
+    if right <= len(heap_) and heap_[right] > heap_[largest]:
             largest = right
     if largest != i:
-        temp = heap_[i-1]
-        heap_[i-1] = heap_[largest-1]
+        temp = heap_[i]
+        heap_[i-1] = heap_[largest]
         heap_[largest-1] = temp
         max_heapify(heap_, largest)
 
 def build_max_heap(array_):
-    for i in range(len(array_) // 2, 0, -1):
+    for i in range((len(array_)-1) // 2, 0, -1):
         max_heapify(array_, i)
 
 def heap_sort(array_):
